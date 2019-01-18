@@ -1,0 +1,12 @@
+<div class="col-md-9">
+  <nav class="navbar">
+    <h2 class="text-center col-md-12">Add Category</h2>
+  </nav>
+  <form class="col-md-6 form container">
+    <div class="form-group">
+      <label for="Category" class="form-labels">Category name</label>
+      <input type="text" name="category" class="form-control" id="category" placeholder="Category Name" [(ngModel)]="name">
+    </div>
+    <button type="button" class="btn float-right" (click)="addCategory()">Add</button>
+  </form>
+</div>

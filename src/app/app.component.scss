@@ -1,0 +1,48 @@
+$primary-color: #FBF5F3;
+$secondary-color: #000022;
+$hover-color: #E28413;
+$hover-color-light: rgb(252, 163, 55);
+$fonts: 'Gill Sans',
+'Gill Sans MT',
+Calibri,
+'Trebuchet MS',
+sans-serif;
+
+.main-menu {
+  background-color: $primary-color;
+  height: 100%;
+  position: fixed;
+
+  &-nav {
+    color: $primary-color;
+    margin-top: 0%;
+  }
+
+  &-link {
+    color: $secondary-color;
+    font-family: $fonts;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  &-item {
+    width: 200px;
+    height: 200px;
+    margin-top: 3%;
+
+    &-container {
+      align-items: center;
+    }
+  }
+}
+
+.active-selected {
+  background-color: $hover-color;
+  color: $primary-color;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}

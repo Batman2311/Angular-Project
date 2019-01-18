@@ -1,0 +1,32 @@
+<div class="col-md-10 float-right">
+  <nav class="navbar">
+    <form>
+      <button class="btn btn-light float-right" type="submit" (click)="searchCategory()"><i class="fas fa-search"></i>Search</button>
+      <input class="form-control col-8" name="search" type="search" placeholder="Search" aria-label="Search"
+        [(ngModel)]="searchName">
+    </form>
+    <h2>Categories</h2>
+    <button class="btn btn-outline-dark" [routerLink]="['/Add-Category']">Add Category</button>
+  </nav>
+</div>
+<div class="col-md-10 float-right">
+  <table class="table table-bordered table-sm table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Parent Category</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{category.name}}</td>
+        <td></td>
+        <td>
+          <button class="btn btn-info table-button"><i class="fas fa-pen-square"></i></button>
+          <button class="btn btn-danger table-button" (click)="deleteCategory(category.id)"><i class="fas fa-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

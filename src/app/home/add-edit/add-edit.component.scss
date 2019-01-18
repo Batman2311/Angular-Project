@@ -1,0 +1,33 @@
+$primary-color: #FBF5F3;
+$secondary-color: #000022;
+$hover-color: #E28413;
+$hover-color-light: rgb(252, 163, 55);
+$fonts: 'Gill Sans',
+'Gill Sans MT',
+Calibri,
+'Trebuchet MS',
+sans-serif;
+
+h2 {
+  font-family: $fonts;
+  font-style: oblique;
+}
+
+.form {
+  margin-top: 5%;
+
+  &-labels {
+    color: $secondary-color;
+    font-family: $fonts;
+  }
+}
+
+.btn {
+  background-color: $hover-color-light;
+  color: $secondary-color;
+
+  &:hover {
+    background-color: $hover-color;
+    color: $primary-color;
+  }
+}
