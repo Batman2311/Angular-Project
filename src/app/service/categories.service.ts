@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Category } from '../model/categories-model';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -22,8 +23,8 @@ export class CategoriesService {
     return this.http.delete(this.api + '/' + category)
   }
 
-  searchByName(category:Category) {
-    return this.http.get(this.api + '?filter[where][name]=' + category)
+  searchByName(name):Observable<any>{
+    return this.http.get(this.api + '?filter[where][name]=' + name)
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from 'src/app/service/categories.service';
 import { Category } from 'src/app/model/categories-model';
+import { ICategories } from "src/app/model/ICategories";
 
 @Component({
   selector: 'app-view',
@@ -8,9 +9,9 @@ import { Category } from 'src/app/model/categories-model';
   styleUrls: ['./view.component.scss']
 })
 export class ViewComponent implements OnInit {
-
+  category = []; // need to be fixed..!
   categories: Category[];
-  searchName: string;
+  searchName: any;
 
   constructor(public categoriesService: CategoriesService) {
     this.getCategories()
@@ -27,7 +28,7 @@ export class ViewComponent implements OnInit {
     )
   }
 
-  deleteCategory(categories:Category):void {
+  deleteCategory(categories: ICategories): void {
     this.categoriesService.deleteCategories(categories).subscribe(
       data => {
         this.getCategories();
@@ -38,7 +39,7 @@ export class ViewComponent implements OnInit {
   searchCategory() {
     this.categoriesService.searchByName(this.searchName).subscribe(
       data => {
-        this.categories = data;
+        this.category = data;
       }
     )
   }
