@@ -13,7 +13,7 @@ export class AddEditComponent {
 
   name: Category;
 
-  categories: any = {}
+  categories: any = {};
 
   constructor(public categoriesService: CategoriesService, public router: Router) { }
 
