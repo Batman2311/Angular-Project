@@ -21,26 +21,29 @@ sans-serif;
   &-link {
     color: $secondary-color;
     font-family: $fonts;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 5%;
 
     &:hover {
       color: $hover-color;
+      text-decoration: none;
     }
   }
 
-  &-item {
+  &__item {
     width: 200px;
     height: 200px;
-    margin-top: 3%;
-
-    &-container {
-      align-items: center;
-    }
+    margin-top: 5%;
+    margin-left: 7%;
   }
 }
 
 .active-selected {
   background-color: $hover-color;
   color: $primary-color;
+  border-radius: 25px;
+  margin-left: 5%;
 
   &:hover {
     color: $secondary-color;

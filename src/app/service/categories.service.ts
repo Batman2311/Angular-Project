@@ -19,11 +19,11 @@ export class CategoriesService {
     return this.http.post(this.api, category)
   }
 
-  deleteCategories(category) {
+  deleteCategory(category) {
     return this.http.delete(this.api + '/' + category)
   }
 
-  searchByName(name):Observable<any>{
+  searchByName(name): Observable<any> {
     return this.http.get(this.api + '?filter[where][name]=' + name)
   }
 

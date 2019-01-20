@@ -17,7 +17,7 @@ export class AddEditComponent {
 
   constructor(public categoriesService: CategoriesService, public router: Router) { }
 
-  addCategory() {
+  addCategories() {
     this.categories.name = this.name
     this.categoriesService.addNewCategories(this.categories).subscribe(
       data => {

@@ -1,19 +1,13 @@
 <div class="row">
   <div class="col-md-2 float-left main-menu">
-    <div class="col-md-12">
-      <div class="main-menu-img-container">
-        <a [routerLink]="['Category']"><img class="main-menu-item" src="../assets/img/logo-2.png" alt="Logo"> </a>
-      </div>
-    </div>
+    <a [routerLink]="['Category']"><img class="main-menu__item" src="../assets/img/logo-2.png" alt="Logo"> </a>
     <div class="nav flex-column">
-      <a class="nav-link float-left main-menu-link" [routerLink]="['Category']" routerLinkActive="active-selected">Category</a>
-      <a class="nav-link float-left main-menu-link" [routerLink]="['Products']" routerLinkActive="active-selected">Products</a>
+      <a class="float-left main-menu-link" [routerLink]="['Category']" routerLinkActive="active-selected">Category</a>
+      <a class="float-left main-menu-link" [routerLink]="['Products']" routerLinkActive="active-selected">Products</a>
     </div>
   </div>
- 
+
 </div>
 
 
 <router-outlet></router-outlet>
-
-

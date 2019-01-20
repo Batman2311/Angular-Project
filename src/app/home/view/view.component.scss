@@ -2,6 +2,8 @@ $primary-color: #FBF5F3;
 $secondary-color: #000022;
 $hover-color: #E28413;
 $hover-color-light: rgb(252, 163, 55);
+$btn-edit-color:rgb(83, 120, 221);
+$hover-btn-edit-color:rgb(53, 90, 194);
 $fonts: 'Gill Sans',
 'Gill Sans MT',
 Calibri,
@@ -18,7 +20,15 @@ sans-serif;
 }
 
 .btn {
-  border-radius: 16px;
+  border-radius: 20px;
+
+  &-info {
+    background-color: $btn-edit-color;
+
+    &:hover {
+      background-color: $hover-btn-edit-color;
+    }
+  }
 
   &-outline-dark {
     color: $hover-color;
@@ -32,11 +42,10 @@ sans-serif;
 }
 
 .table {
-  padding: 1%;
   text-align: center;
 
   &-button {
-    margin-left: 7%;
-    border-radius: 8px;
+    margin-left: 3%;
+    border-radius: 20px;
   }
 }
