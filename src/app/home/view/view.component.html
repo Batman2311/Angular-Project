@@ -1,20 +1,25 @@
-<div class="col-md-10 float-right">
-  <nav class="navbar">
-    <form>
-      <button class="btn btn-light float-right" type="submit" (click)="searchCategories()"><i class="fas fa-search"></i>Search</button>
-      <input class="form-control col-8" name="search" type="search" placeholder="Search" aria-label="Search"
-        [(ngModel)]="searchCategoryByName">
-    </form>
-    <h2>Categories</h2>
-    <button class="btn btn-outline-dark" [routerLink]="['/Add-Category']">Add Category</button>
-  </nav>
+<div class="container-fluid header">
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar">
+        <form>
+          <button class="btn btn-light float-right" type="submit" (click)="searchCategories()"><i class="fas fa-search"></i>Search</button>
+          <input class="form-control col-8" name="search" type="search" placeholder="Search" aria-label="Search"
+            [(ngModel)]="searchCategoryByName">
+        </form>
+        <h2>Categories</h2>
+        <button class="btn btn-outline-dark" [routerLink]="['/Add-Category']">Add Category</button>
+      </nav>
+    </div>
+  </div>
 </div>
 <div class="col-md-10 float-right">
   <table class="table table-bordered table-sm table-hover">
-    <thead class="thead-light">
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Parent Category</th>
+        <th scope="col">Description</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -22,9 +27,10 @@
       <tr *ngFor="let category of categories">
         <td>{{category.name}}</td>
         <td></td>
+        <td></td>
         <td>
-          <button class="btn btn-info table-button"><i class="fas fa-pen-square"></i></button>
-          <button class="btn btn-danger table-button" (click)="deleteCategories(category.id)"><i class="fas fa-trash"></i></button>
+          <button class="btn btn-outline-info table-button"><i class="fas fa-edit"></i></button>
+          <button class="btn btn-outline-danger table-button" (click)="deleteCategories(category.id)"><i class="fas fa-trash"></i></button>
         </td>
       </tr>
     </tbody>

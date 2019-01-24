@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriesService } from 'src/app/service/categories.service';
 import { Category } from 'src/app/model/categories-model';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -15,12 +16,13 @@ export class AddEditComponent {
 
   categories: any = {};
 
-  constructor(public categoriesService: CategoriesService, public router: Router) { }
+  constructor(public categoriesService: CategoriesService, public router: Router, private toastr: ToastrService) { }
 
   addCategories() {
     this.categories.name = this.name
     this.categoriesService.addNewCategories(this.categories).subscribe(
       data => {
+        this.toastr.success(`Category is added.`);
         this.router.navigate(['Category']);
       }
     )

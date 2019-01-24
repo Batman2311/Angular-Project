@@ -11,6 +11,7 @@ sans-serif;
 .main-menu {
   background-color: $primary-color;
   height: 100%;
+  width: 15.7%;
   position: fixed;
 
   &-nav {
@@ -23,7 +24,7 @@ sans-serif;
     font-family: $fonts;
     font-size: 1.1rem;
     text-align: center;
-    padding: 5%;
+    padding: 3%;
 
     &:hover {
       color: $hover-color;
@@ -43,7 +44,8 @@ sans-serif;
   background-color: $hover-color;
   color: $primary-color;
   border-radius: 25px;
-  margin-left: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
 
   &:hover {
     color: $secondary-color;
