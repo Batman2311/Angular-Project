@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CategoriesService } from 'src/app/service/categories.service';
 import { Category } from 'src/app/model/categories-model';
 import { ToastrService } from 'ngx-toastr';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 
 
@@ -13,16 +14,20 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ViewComponent implements OnInit {
 
+  modalRef: BsModalRef;
+  message: string;
   categories: Category[];
   searchCategoryByName: any;
 
-  constructor(public categoriesService: CategoriesService, private toastr: ToastrService) {
+  constructor(public categoriesService: CategoriesService, private toastr: ToastrService, private modalService: BsModalService) {
     this.getCategories()
   }
 
   ngOnInit() {
   }
 
+
+  
   getCategories() {
     this.categoriesService.getCategory().subscribe(
       data => {
@@ -36,6 +41,8 @@ export class ViewComponent implements OnInit {
       data => {
         this.toastr.success(`Category is deleted.`);
         this.getCategories();
+        this.modalRef.hide();
+
       }
     )
   }
@@ -47,6 +54,16 @@ export class ViewComponent implements OnInit {
       }
     )
   }
-
-
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-md'});
+  }
+ 
+  confirm(): void {
+    this.modalRef.hide();
+  }
+ 
+  decline(): void {
+    this.modalRef.hide();
+  }
 }
+

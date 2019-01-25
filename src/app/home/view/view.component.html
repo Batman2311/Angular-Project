@@ -4,7 +4,7 @@
       <nav class="navbar">
         <form>
           <button class="btn btn-light float-right" type="submit" (click)="searchCategories()"><i class="fas fa-search"></i>Search</button>
-          <input class="form-control col-8" name="search" type="search" placeholder="Search" aria-label="Search"
+          <input class="form-control col-8" name="search" type="search" placeholder="Search..." aria-label="Search"
             [(ngModel)]="searchCategoryByName">
         </form>
         <h2>Categories</h2>
@@ -30,7 +30,16 @@
         <td></td>
         <td>
           <button class="btn btn-outline-info table-button"><i class="fas fa-edit"></i></button>
-          <button class="btn btn-outline-danger table-button" (click)="deleteCategories(category.id)"><i class="fas fa-trash"></i></button>
+          <!-- <button class="btn btn-outline-danger table-button" (click)="deleteCategories(category.id)"><i class="fas fa-trash"></i></button> -->
+          <button type="button" class="btn btn-outline-danger table-button" (click)="openModal(template)"><i class="fas fa-trash"></i></button>
+          <br><br>
+          <ng-template #template>
+            <div class="modal-body text-center">
+              <p>Are u sure u want to delete this category?</p>
+              <button type="button" class="btn btn-success" (click)="deleteCategories(category.id)">Yes</button>
+              <button type="button" class="btn btn-danger" (click)="decline()">No</button>
+            </div>
+          </ng-template>
         </td>
       </tr>
     </tbody>
